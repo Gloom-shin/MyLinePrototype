@@ -1,4 +1,7 @@
 import streamlit as st
+from myline_langchain import save_diary
+
+
 
 st.title("5단계: 감정 입력")
 
@@ -14,4 +17,5 @@ if st.button("제출"):
     
     # 모든 세션 상태를 보여줌
     st.write("전체 일기 정보:")
-    st.json(st.session_state)
+    save_diary(dict(st.session_state))
+
